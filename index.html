@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine's Day Quiz</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="y.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <div class="container">
+    <!-- Page 1 -->
+    <div id="welcome" class="box page">
+      <h1>💝 Happy Valentine's Day 💝</h1>
+      <button onclick="showQuizIntro()">Continue</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="quizIntro" class="hidden box page">
+      <h2>Let's see how much you know about me 💕</h2>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz -->
+    <div id="quiz" class="hidden box page">
+      <h2 id="question"></h2>
+      <div id="options"></div>
+      <button id="nextBtn" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <!-- Result -->
+    <div id="resultPage" class="hidden box page">
+      <h2>Your Result 💌</h2>
+      <p class="result" id="score"></p>
+      <button onclick="showTimerPage()">Next 💕</button>
+    </div>
+
+    <!-- NEW: Timer Page -->
+    <div id="timerPage" class="hidden box page">
+      <h2>My love for you is this old already: 💖</h2>
+      <div class="timer-container">
+        <div class="timer-unit">
+          <div class="timer-display" id="timer-days">00</div>
+          <div class="timer-label">Days</div>
+        </div>
+
+        <div class="timer-separator">:</div>
+
+        <div class="timer-unit">
+          <div class="timer-display" id="timer-hours">00</div>
+          <div class="timer-label">Hours</div>
+        </div>
+
+        <div class="timer-separator">:</div>
+
+        <div class="timer-unit">
+          <div class="timer-display" id="timer-minutes">00</div>
+          <div class="timer-label">Minutes</div>
+        </div>
+
+        <div class="timer-separator">:</div>
+
+        <div class="timer-unit">
+          <div class="timer-display" id="timer-seconds">00</div>
+          <div class="timer-label">Seconds</div>
+        </div>
+      </div>
+      <button onclick="showLetter()">Continue to Letter ➡️</button>
+    </div>
+
+    <!-- Love Letter -->
+    <div id="letterPage" class="hidden box page">
+      <h2>My Love Letter to You 💖</h2>
+      <div class="love-letter" id="letterText"></div>
+      <button onclick="showValentinePage()">Next ➡️</button>
+    </div>
+
+    <!-- Valentine Proposal -->
+    <div id="valentinePage" class="hidden box page">
+      <h2>Will you be my Valentine? 💍</h2>
+      <button onclick="recordValentine('Yes'); showThankYouPage();">Yes 💖</button>
+      <button onclick="recordValentine('No'); showThankYouPage();">No 😢</button>
+      <br><br>
+      <p class="download-note">(*Download this response file and send it to me*)</p>
+      <button onclick="downloadReport()">📄 Download Responses</button>
+    </div>
+
+    <!-- Thank You Page -->
+    <div id="thankYouPage" class="hidden box page">
+      <h2>Thank you for your time 🌷</h2>
+      <p class="result">It means a lot to me that you did this.</p>
+      <div class="report-actions">
+        <p class="download-note">(*Download this response file and send it to me*)</p>
+        <button onclick="downloadReport()">📄 Download Responses</button>
+        <button onclick="resetQuiz()">🔁 Restart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
