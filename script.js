@@ -156,7 +156,7 @@ function nextQuestion() {
 
 // Timer functions
 function startTimer() {
-  const startDate = new Date("2024-08-02T00:00:00").getTime();
+  const startDate = new Date("2023-08-02T00:00:00").getTime();
 
   timerInterval = setInterval(() => {
     const now = new Date().getTime();
@@ -334,4 +334,5 @@ Thank you for being you—unapologetically, beautifully you.
 Forever yours,
 Himanshu 💕
   `;
+
 }
